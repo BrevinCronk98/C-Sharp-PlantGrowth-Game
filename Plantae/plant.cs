@@ -13,7 +13,7 @@ namespace Plantae.Flora
         private int _turn;
        
         
-        public Plant(string name, string type, string age, int food, int water, int sun, int turn)
+        public Plant(string name, string type)
         {
             _name = name;
             _type = type;
@@ -21,7 +21,7 @@ namespace Plantae.Flora
             _food = 0;
             _water = 0;
             _sun = 0;
-            _turn = 0;
+            _turn = 1;
         }
         public string GetName()
         {
@@ -56,12 +56,28 @@ namespace Plantae.Flora
             
         }
 
-        // Public Method
-        public void Update()
+        public void GiveWater()
         {
+            _water += 5;
+        }
+        public void GiveFood()
+        {
+            _food += 5;
+        }
+        public void GiveSun()
+        {
+            _sun += 5;
+        }
+
+        // Public Method
+        public void UpdateGame()
+        {
+            Update();
             IncreaseAge();
+            IsAlive();
             _turn ++;
         }
+        
 
         // Private Method
         private void IncreaseAge()
@@ -82,6 +98,49 @@ namespace Plantae.Flora
             {
                 _age = "MegaSumoPlantaeVerus";
             }
+        }
+
+        private void IsAlive()
+        {
+            if((_food >= 15|| _water >= 15 || _sun >= 15) || _age == "MegaSumoPlantaeVerus")
+            {
+                Console.WriteLine("You Win!");
+                Console.WriteLine("Plant Age: " + _age);
+                Console.WriteLine("Water Level: " +_water);
+                Console.WriteLine("Sunlight Amount: " +_sun);
+                Console.WriteLine("Fertilizer Level: " +_food);
+                Console.WriteLine("Turn Count: " + _turn);
+                Environment.Exit(0);
+            }
+        }
+
+        private void Update()
+        {
+          for(int i = 0; i < _turn; i ++)
+                {
+                    Console.WriteLine("Press 1 to Water Your Plant. Press 2 to Move Your Plant Into UV Incubator. Press 3 To Give Your Plant Fertilizer."); 
+                    string keyPress  = Console.ReadLine();
+                    int playerInput = int.Parse(keyPress);
+                    
+                    if(playerInput == 1)
+                    { 
+                     _water ++;
+                    }
+                    if (playerInput == 2)
+                    {
+                       _sun ++;
+                    }
+                    if(playerInput == 3)
+                    {
+                        _food ++;
+                    }
+                   
+                    Console.WriteLine("Plant Age: " + _age);
+                    Console.WriteLine("Water Level: " + _water);
+                    Console.WriteLine("Sunlight Amount: " + _sun);
+                    Console.WriteLine("Fertilizer Level: " + _food);
+                    Console.WriteLine("Turn Count: " + _turn);
+                }  
         }
     }
 }
