@@ -12,8 +12,8 @@ namespace Plantae.Flora
         private int _sun;
         private int _turn;
        
-        
-        public Plant(string name, string type)
+    
+        public Plant(string name, string type, string name)
         {
             _name = name;
             _type = type;
@@ -22,6 +22,7 @@ namespace Plantae.Flora
             _water = 0;
             _sun = 0;
             _turn = 1;
+    
         }
         public string GetName()
         {
@@ -56,19 +57,7 @@ namespace Plantae.Flora
             
         }
 
-        public void GiveWater()
-        {
-            _water += 5;
-        }
-        public void GiveFood()
-        {
-            _food += 5;
-        }
-        public void GiveSun()
-        {
-            _sun += 5;
-        }
-
+    
         // Public Method
         public void UpdateGame()
         {
