@@ -73,13 +73,42 @@ namespace Plantae.Flora
         public void UpdateGame()
         {
             Update();
-            IncreaseAge();
-            IsAlive();
-            _turn ++;
         }
         
 
         // Private Method
+
+        private void Update()
+        {
+          for(int i = 0; i < _turn; i ++)
+                {
+                    IncreaseAge();
+                    WinCond();
+                    Console.WriteLine("Press 1 to Water Your Plant. Press 2 to Move Your Plant Into UV Incubator. Press 3 To Give Your Plant Fertilizer."); 
+                    string keyPress  = Console.ReadLine();
+                    int playerInput = int.Parse(keyPress);
+                    
+                    if(playerInput == 1)
+                    { 
+                     _water += 5;
+                    }
+                    if (playerInput == 2)
+                    {
+                       _sun +=5;
+                    }
+                    if(playerInput == 3)
+                    {
+                        _food += 5;
+                    }
+                   
+                    Console.WriteLine("Plant Age: " + _age);
+                    Console.WriteLine("Water Level: " + _water);
+                    Console.WriteLine("Sunlight Amount: " + _sun);
+                    Console.WriteLine("Fertilizer Level: " + _food);
+                    Console.WriteLine("Turn Count: " + _turn);
+                     _turn ++;
+                }        
+        }
         private void IncreaseAge()
         {
             if(_turn <=3)
@@ -100,9 +129,9 @@ namespace Plantae.Flora
             }
         }
 
-        private void IsAlive()
+        private void WinCond()
         {
-            if((_food >= 15|| _water >= 15 || _sun >= 15) || _age == "MegaSumoPlantaeVerus")
+            if((_food >= 65|| _water >= 65 || _sun >= 65) || _age == "MegaSumoPlantaeVerus")
             {
                 Console.WriteLine("You Win!");
                 Console.WriteLine("Plant Age: " + _age);
@@ -112,35 +141,9 @@ namespace Plantae.Flora
                 Console.WriteLine("Turn Count: " + _turn);
                 Environment.Exit(0);
             }
+              
         }
 
-        private void Update()
-        {
-          for(int i = 0; i < _turn; i ++)
-                {
-                    Console.WriteLine("Press 1 to Water Your Plant. Press 2 to Move Your Plant Into UV Incubator. Press 3 To Give Your Plant Fertilizer."); 
-                    string keyPress  = Console.ReadLine();
-                    int playerInput = int.Parse(keyPress);
-                    
-                    if(playerInput == 1)
-                    { 
-                     _water ++;
-                    }
-                    if (playerInput == 2)
-                    {
-                       _sun ++;
-                    }
-                    if(playerInput == 3)
-                    {
-                        _food ++;
-                    }
-                   
-                    Console.WriteLine("Plant Age: " + _age);
-                    Console.WriteLine("Water Level: " + _water);
-                    Console.WriteLine("Sunlight Amount: " + _sun);
-                    Console.WriteLine("Fertilizer Level: " + _food);
-                    Console.WriteLine("Turn Count: " + _turn);
-                }  
-        }
+      
     }
 }

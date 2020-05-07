@@ -7,8 +7,6 @@ namespace Plantae
 {
     public class Program
     {
-      
-       
         public static void Main()
         {
             List<Plant> Plants = new List<Plant>(){};
@@ -20,7 +18,7 @@ namespace Plantae
            
            
             Plant myPlant = new Plant(name,type);
-            myPlant.GetTurn();
+           
             Plants.Add(myPlant);
             foreach(Plant planty in Plants)
             {
@@ -31,9 +29,8 @@ namespace Plantae
                 Console.WriteLine("Sunlight Amount: " + planty.GetSunshine());
                 Console.WriteLine("Fertilizer Level: " + planty.GetFood());
                 Console.WriteLine("Turn Count: " + planty.GetTurn());
-            }   
-
-            myPlant.UpdateGame();  
+                myPlant.UpdateGame(); 
+            }        
         }   
     }   
 }
