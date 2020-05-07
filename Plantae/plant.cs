@@ -10,17 +10,18 @@ namespace Plantae.Flora
         private int _food;
         private int _water;
         private int _sun;
+        private int _turn;
        
         
-        public Plant(string name, string type, string age, int food, int water, int sun)
+        public Plant(string name, string type, string age, int food, int water, int sun, int turn)
         {
             _name = name;
             _type = type;
-            _age = age;
-            _food = food;
-            _water = water;
-            _sun = sun;
-            
+            _age = "Baby Plant";
+            _food = 0;
+            _water = 0;
+            _sun = 0;
+            _turn = 0;
         }
         public string GetName()
         {
@@ -49,22 +50,38 @@ namespace Plantae.Flora
             return _age;
         }
         
-        public void SetName(string newName)
+        public int GetTurn()
         {
-            _name = newName;
-        }
-
-        public void SetAge(string age)
-        {
+            return _turn;
             
         }
-       
-        // {
-            
-        // } 
 
-    
+        // Public Method
+        public void Update()
+        {
+            IncreaseAge();
+            _turn ++;
+        }
 
+        // Private Method
+        private void IncreaseAge()
+        {
+            if(_turn <=3)
+            {
+                _age = "Baby Plant";
+            } else if(_turn >=4 && _turn <=7)
+            {
+                _age = "Little Plant";
+            } else if(_turn >=8 && _turn <=11)
+            {
+                _age = "Sightly Bigger Plant";
+            } else if(_turn >= 12 && _turn <=15)
+            {
+                _age = "Big Boi Plant";
+            } else
+            {
+                _age = "MegaSumoPlantaeVerus";
+            }
+        }
     }
-
 }

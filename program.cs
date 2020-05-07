@@ -11,11 +11,10 @@ namespace Plantae
        
         public static void Main()
         {
-            int turnCount = 1;
             int water = 0;
             int food = 0;
             int sun = 0;
-            string age = age;
+            string age = "";
             
            
            
@@ -26,8 +25,9 @@ namespace Plantae
             Console.WriteLine("Enter Plant Type");
             string type = Console.ReadLine();
            
-          
-
+           
+            Plant myPlant = new Plant(name,type,age,food,water,sun,turn);
+            Plants.Add(myPlant);
             foreach(Plant planty in Plants)
             {
                 
@@ -36,9 +36,10 @@ namespace Plantae
                 Console.WriteLine(planty.GetAge());
                 Console.WriteLine(planty.GetFood());
                 Console.WriteLine(planty.GetWater());
-                Console.WriteLine(planty.GetSunshine()); 
+                Console.WriteLine(planty.GetSunshine());
+                planty.GetTurn();
 
-                for(int i = 0; i < turnCount; i ++)
+                for(int i = 0; i < 5; i ++)
                 {
                     Console.WriteLine("Press 1 to Water Your Plant. Press 2 to Move Your Plant Into UV Incubator. Press 3 To Give Your Plant Fertilizer."); 
                     string keyPress  = Console.ReadLine();
@@ -58,26 +59,7 @@ namespace Plantae
                         food += 5;
                         Console.WriteLine("You Have Given " + food + "To Your Plant");
                     }
-                    if(turnCount <= 4)
-                    {
-                        return planty.age;
-                    } else if(turnCount >=5 && turnCount <= 8)
-                    {
-                        return planty.age;
-                    } else if(turnCount >= 9 && turnCount <= 12)
-                    {
-                        return planty.age;
-                    } else if (turnCount >= 13 && turnCount <= 15)
-                    {
-                        return planty.age;
-                    } else if(turnCount >= 16 && turnCount <= 20)
-                    {
-                        return planty.age;
-                    } else 
-                    {
-                        return planty.age;
-                    }  
-                    turnCount ++; 
+                    myPlant.Update();
                 }
             }     
         }   
