@@ -1,0 +1,12 @@
+C:\Users\cronk\desktop\C-Sharp-Build-Plant\obj\Debug\netcoreapp2.2\plant.csprojAssemblyReference.cache
+C:\Users\cronk\desktop\C-Sharp-Build-Plant\obj\Debug\netcoreapp2.2\plant.csproj.CoreCompileInputs.cache
+C:\Users\cronk\desktop\C-Sharp-Build-Plant\obj\Debug\netcoreapp2.2\plant.AssemblyInfoInputs.cache
+C:\Users\cronk\desktop\C-Sharp-Build-Plant\obj\Debug\netcoreapp2.2\plant.AssemblyInfo.cs
+C:\Users\cronk\desktop\C-Sharp-Build-Plant\bin\Debug\netcoreapp2.2\plant.deps.json
+C:\Users\cronk\desktop\C-Sharp-Build-Plant\bin\Debug\netcoreapp2.2\plant.runtimeconfig.json
+C:\Users\cronk\desktop\C-Sharp-Build-Plant\bin\Debug\netcoreapp2.2\plant.runtimeconfig.dev.json
+C:\Users\cronk\desktop\C-Sharp-Build-Plant\bin\Debug\netcoreapp2.2\plant.dll
+C:\Users\cronk\desktop\C-Sharp-Build-Plant\bin\Debug\netcoreapp2.2\plant.pdb
+C:\Users\cronk\desktop\C-Sharp-Build-Plant\obj\Debug\netcoreapp2.2\plant.dll
+C:\Users\cronk\desktop\C-Sharp-Build-Plant\obj\Debug\netcoreapp2.2\plant.pdb
+C:\Users\cronk\desktop\C-Sharp-Build-Plant\obj\Debug\netcoreapp2.2\plant.genruntimeconfig.cache
